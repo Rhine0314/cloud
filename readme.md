@@ -16,3 +16,5 @@ openFeign: 服务端集群和eureka集群还是用 第一套
             客户端 cloud-consumerFeign-order80
 
 Hystrix: eureka集群 + hystrix-payment8001
+
+end-----
