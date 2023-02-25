@@ -1,0 +1,10 @@
+server:
+  port: 80
+
+spring:
+  application:
+    name: cloud-order-com.atgugu.springcloud.service
+  cloud:
+    zookeeper:
+      #      zookeeper服务器地址 华为云
+      connect-string: 124.71.238.184:2181

@@ -1,0 +1,23 @@
+server:
+  port: 3366
+spring:
+  application:
+    name: cloud-config-client
+  cloud:
+    config:
+      label: master
+      name: myConfig
+      profile: dev
+      uri: http://localhost:3344
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+
+#动态刷新config配置的参数
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

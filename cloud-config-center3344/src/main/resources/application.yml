@@ -1,0 +1,38 @@
+server:
+  port: 3344
+spring:
+  application:
+    name: cloud-config-center
+  cloud:
+    config:
+      server:
+        git:
+#          uri: git@github.com:Rhine0314/springcloud-config.git
+          uri: git@gitee.com:rhineLueng/springcloud-config.git #github/gitee上的ssh的uri
+          search-paths:
+            - springcloud-config  #仓库名吧
+      label: master #分支
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+eureka:
+  client:
+    #    表示不向注册中心注册自己
+    register-with-eureka: true
+    #    表示自己就是注册中心，只需要维护实例不需要检索服务
+    fetch-registry: true
+    service-url:
+      defaultZone: http://127.0.0.1:7002/eureka/,http://localhost:7001/eureka/
+  instance:
+    #    实例名
+    instance-id: cloud-config-center3344
+    #    是否显示IP地址
+    prefer-ip-address: true
+#暴露bus刷新配置的端点
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'

@@ -1,0 +1,33 @@
+server:
+  port: 3355
+spring:
+  application:
+    name: cloud-config-client
+  cloud:
+    config:
+      label: master
+      name: myConfig
+      profile: dev
+      uri: http://localhost:3344
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+#eureka:
+#  client:
+#    register-with-eureka: true
+#    fetch-registry: true
+#    com.atgugu.springcloud.service-url:
+#      defaultZone: http://127.0.0.1:7002/eureka/,http://localhost:7001/eureka/
+#  instance:
+#    #    实例名
+#    instance-id: cloud-config-client3355
+#    #    是否显示IP地址
+#    prefer-ip-address: true
+#动态刷新config配置的参数
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

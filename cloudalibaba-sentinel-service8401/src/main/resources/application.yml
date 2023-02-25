@@ -1,0 +1,19 @@
+server:
+  port: 8401
+spring:
+  application:
+    name: cloud-sentinel-com.atgugu.springcloud.service
+  cloud:
+    nacos:
+      discovery:
+        #        server-addr: 127.0.0.1:8848
+        server-addr: 124.71.238.184:8848  #华为云
+    sentinel:
+      transport:
+        dashboard: 127.0.0.1:8080
+        port: 8719
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

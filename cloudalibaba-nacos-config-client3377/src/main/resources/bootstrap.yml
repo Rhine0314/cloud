@@ -1,0 +1,15 @@
+server:
+  port: 3377
+spring:
+  application:
+    name: nacos-config-client
+  cloud:
+    nacos:
+      discovery:
+        #        server-addr: 127.0.0.1:8848
+        server-addr: 124.71.238.184:8848  #华为云
+      config:
+        server-addr: 124.71.238.184:8848  #华为云
+        file-extension: yaml
+        prefix: application  #如果不写这个 prefix默认是applicationName
+#        group: DEV_GROUP

@@ -1,0 +1,15 @@
+server:
+  port: 9004
+spring:
+  application:
+    name: cloud-sentinel-payment
+  cloud:
+    nacos:
+      discovery:
+        #        server-addr: 127.0.0.1:8848
+        server-addr: 124.71.238.184:8848  #华为云
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

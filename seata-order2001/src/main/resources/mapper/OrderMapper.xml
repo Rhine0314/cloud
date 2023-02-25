@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--namespace对应接口完全限定名-->
+<mapper namespace="com.atgugu.springcloud.dao.OrderMapper">
+
+    <!--    如果数据表结构这个字段是自增的可以用useGeneratedKeys="true" keyProperty="id"这两个参数,就无需插入该值-->
+    <insert id="createOrder" parameterType="order" useGeneratedKeys="true" keyProperty="id">
+        insert into t_order (user_id, product_id, count, money, status)
+            values (#{userId}, #{productId}, #{count}, #{money}, 0)
+    </insert>
+
+    <update id="updateOrderStatus">
+        update t_order set status = 1
+            where user_id = #{userId}
+              and product_id = #{productId}
+              and status = #{status}
+    </update>
+</mapper>

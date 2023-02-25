@@ -1,0 +1,22 @@
+server:
+  port: 7002
+eureka:
+  instance:
+#    hostname: eureka7002.com
+  #    hostname: localhost eureka服务端的实例名(单机版)
+    hostname: 127.0.0.1
+  client:
+    #    表示不向注册中心注册自己
+    register-with-eureka: false
+    #    表示自己就是注册中心，只需要维护实例不需要检索服务
+    fetch-registry: false
+    service-url:
+      #todo 后缀的eureka似乎并不能正确导航，去掉就可以互相跳转
+#      defaultZone: http://eureka7001.com:7001/eureka/ #守望另一个eureka服务器
+#      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/ #单机版的配置
+      defaultZone: http://localhost:7001
+#  server:
+#    #    关闭保护模式（即客户端一旦连接不上就剔除该客户端的服务）
+#    enable-self-preservation: false
+#    # 扫描失效服务的间隔时间（单位毫秒，默认是60*1000）即60秒
+#    eviction-interval-timer-in-ms: 10000
